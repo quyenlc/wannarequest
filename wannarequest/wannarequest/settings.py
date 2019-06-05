@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'frontend',
     'wannarequest',
     'social_django',
     'django.contrib.admin',
@@ -122,7 +123,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '213400018041-d46ek58gu6oaotucvcv21aoir7uh3uni.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '4TULwx4K0wSmzsTqnw96geVJ'
 LOGIN_URL = '/auth/login/google-oauth2/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -142,3 +143,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]

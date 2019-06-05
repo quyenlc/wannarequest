@@ -19,8 +19,9 @@ from django.conf import settings
 from django.contrib.auth import logout
 
 urlpatterns = [
-    path('', include('social_django.urls', namespace='social')),
+    # path('', include('social_django.urls', namespace='social')),
+    path('', include('frontend.urls')),
+    path(r'auth/', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('admin/', admin.site.urls),
-    path(r'^auth/', include('social_django.urls', namespace='social')),
 ]
